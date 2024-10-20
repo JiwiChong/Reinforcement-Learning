@@ -1,3 +1,5 @@
+# Data-driven Inventory Management Modeling using Deep Reinforcement Learning
+
 Reinforcement Learning is getting increasingly relevant in the field of Business, especially 
 with the explosive growth of IoT and autonomous technologies that were promoted by the Fourth
 Industrial Revolution. A data-driven Make-to-Stock (MTS) Inventory Management is conducted with
