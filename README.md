@@ -45,6 +45,13 @@ Three relevant KPIs were used: Sell-through rate, Service Level, and Inventory-t
 Such KPIs demonstrate how effectively the DRL agent maintains appropriate storage level, fulfilling the 
 demand as much as possible at the same time. 
 
+### Commands
+**_Train_** <br />
+python main.py --data_dir () --seq_len ()
+
+**_Evaluation_** <br />
+python eval.py --data_dir () --one_step () --n_step () --n_step_size () --scale_data () --forecast_data () --loss_function () --tilt_loss_q () --custom_loss_prop () --model_name () --run_num ()
+
 When trained with TP reward function, SAC achieved the lowest Total Cost and inventory-to-sales ratio
 as well as the best balance between the Sell-through rate and Service Level.
 
