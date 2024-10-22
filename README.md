@@ -39,3 +39,15 @@ backed up by the eventual lowest convergence of its TP Reward function's plot.
 <div align="center">
 <img src="https://github.com/user-attachments/assets/204b8b21-e7ef-4b5a-84ba-272714829398" width=70% height=70%>
 </div><br />
+
+Key Performance Indicators (KPI) were used as evaluation metrics for Inventory Management in this work. 
+Three relevant KPIs were used: Sell-through rate, Service Level, and Inventory-to-sales ratio. 
+Such KPIs demonstrate how effectively the DRL agent maintains appropriate storage level, fulfilling the 
+demand as much as possible at the same time. 
+
+When trained with TP reward function, SAC achieved the lowest Total Cost and inventory-to-sales ratio
+as well as the best balance between the Sell-through rate and Service Level.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/0a549807-dbd1-4fd5-a040-2cdd26074ec0" width=70% height=70%>
+</div><br />
