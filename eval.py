@@ -59,7 +59,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter,
                                   description="""Args for Env""")
     parser.add_argument("-method", dest="method", type=str, required=False, help="Which RL model to run")
-    parser.add_argument('--data_dir', type=str, help='Main directory of input dataset')
+    parser.add_argument('--main_dir', type=str, help='Main directory of input dataset')
     parser.add_argument('--batch_size', type=int, default=8, help='batch size')
     parser.add_argument('--model_name', type=str, help='algorithm')
     parser.add_argument('--num_cpu', type=str, default=8, help='Dataset to be used')
@@ -85,4 +85,4 @@ if __name__ == '__main__':
 
 
 # Commands:
-# python main.py --method sac --main_dir ./Reinforcement-Learning --num_cpu 8 --run_num (# of run)
+# python eval.py --method sac --main_dir ./Reinforcement-Learning --num_cpu 8 --run_num (# of run)
