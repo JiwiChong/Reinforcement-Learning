@@ -7,7 +7,11 @@ is conducted with Deep Reinforcement Learning Agents. The agent learns on a sequ
 basis to optimize the production and allocation of apparel products. It learns with the objective 
 to establish the right balance between appropriate storage and demand fulfillment. 
 
+The environment is a two-echelon Inventory Management system with 6 retail shops.
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/b9870498-fad2-491b-a769-05bf9a253574" width=80% height=80%>
+</div><br />
 
 In Reinforcement Learning, reward function plays an essential role for the learning process and optimization
 of the policy. In this work, a novel reward function named Total Penalty (TP), was proposed and used. 
