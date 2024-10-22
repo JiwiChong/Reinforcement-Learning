@@ -3,7 +3,7 @@
 Reinforcement Learning is getting increasingly relevant in the field of Business, especially 
 with the explosive growth of IoT and autonomous technologies that were promoted by the Fourth
 Industrial Revolution. In this repository, a data-driven Make-to-Stock (MTS) Inventory Management 
-is conducted with Deep Reinforcement Learning Agents. The agent learns on a sequential decision-making
+is conducted with Deep Reinforcement Learning (DRL) Agents. The agent learns on a sequential decision-making
 basis to optimize the production and allocation of apparel products. It learns with the objective 
 to establish the right balance between appropriate storage and demand fulfillment. 
 
@@ -11,6 +11,15 @@ The environment is a two-echelon Inventory Management system with 6 retail shops
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/b9870498-fad2-491b-a769-05bf9a253574" width=80% height=80%>
+</div><br />
+
+Soft Actor Critic (SAC) is the DRL algorithm that was best suited for this task thanks to its ability to 
+learn to optimize the policy with extensive exploration via entropy maximization.
+
+Overall Diagram of MTS Inventory Management with SAC:
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/d1c8ddad-ed2a-4365-ba4d-31a27c107a14" width=70% height=70%>
 </div><br />
 
 In Reinforcement Learning, reward function plays an essential role for the learning process and optimization
