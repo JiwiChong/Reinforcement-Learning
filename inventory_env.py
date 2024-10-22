@@ -44,7 +44,7 @@ class Action(object):
         self.shippings_to_warehouses = np.zeros(warehouse_num)
 
 class InventoriesInKorea(gym.Env):
-    def __init__(self, mode='train', episode_length=365, train_test_split=0.2, out_csv_name='/home/jiwi90/Inventory_Management_DRL/results/SB3_results/SAC/run_2/', is_mo=False):
+    def __init__(self, args, mode='train', episode_length=365, train_test_split=0.2, out_csv_name=None, is_mo=False):
 
         self.T = episode_length  # episode duration
         self.train_test_split = train_test_split
@@ -55,7 +55,7 @@ class InventoriesInKorea(gym.Env):
         self.dem_cost_param = 1.0        # Demand cost per unit for not meeting up demand (previous_value = 10.0)
         self.discard_cost_param = 1.0     # Discard cost per unit for exceeding storage capacity (previous value 4.0)
         
-        self.demand_dataset = pd.read_csv(main_dir+'entire_region_sales.csv')
+        self.demand_dataset = pd.read_csv(f'{args.main_dir}/entire_region_sales.csv')
         
         self.MA_type = 'SMA'
         self.history_length = 7
@@ -256,7 +256,7 @@ class InventoriesInKorea(gym.Env):
         self.state.demand_history = list(np.hstack([self.demands.iloc[self.rand_starting_day-self.history_length : self.rand_starting_day,i].values.flatten() for i in range(self.history_length-1)]))
         self.info['info'] = [demands, all_t_storages, all_t_stockouts, all_t_factory_overstocks, all_t_retailer_overstocks,all_real_transported, round(action[0])]
         done = self.t >= self.T
-        info = self._compute_step_info(self.reward, demands, all_t_storages, all_t_stockouts, all_t_factory_overstocks, all_t_retailer_overstocks, all_real_transported, round(action[0]))
+        info = self._compute_step_info(demands, all_t_storages, all_t_stockouts, all_t_factory_overstocks, all_t_retailer_overstocks, all_real_transported, round(action[0]), self.reward)
         self.metrics.append(info)
 #         print('run:', self.run)
 
@@ -292,14 +292,28 @@ class InventoriesInKorea(gym.Env):
     def close(self):
         pass
 
-def make_env(rank):
+def make_env(args, rank):
     """
     Utility function for multiprocessed env.
     :param num_env: (int) the number of environments you wish to have in subprocesses
     :param rank: (int) index of the subprocess
     """
     def _init():
-        env = InventoriesInKorea(mode='train', episode_length=365, train_test_split=0.2, out_csv_name=args.main_dir+'/results/SB3_results/random/Total_penalty/exp_1/info_df/'.format(rank))
+        env = InventoriesInKorea(mode='train', episode_length=365, train_test_split=0.2, out_csv_name=f'{args.main_dir}/results/{args.method}_results/Total_penalty/run_{args.run_num}/info_df_{rank}')
+        return env
+    
+    return _init
+
+
+def make_env_test(args, rank):
+    """
+    Utility function for multiprocessed env.
+    :param num_env: (int) the number of environments you wish to have in subprocesses
+    :param rank: (int) index of the subprocess
+    """
+    def _init():
+        # make sure you change model's name and training num here! 
+        env = InventoriesInKorea(mode='test', episode_length=365, train_test_split=0.2, out_csv_name=f'{args.main_dir}/results/{args.method}_results/Total_penalty/run_{args.run_num}/info_df_{rank}')
         return env
     
     return _init
