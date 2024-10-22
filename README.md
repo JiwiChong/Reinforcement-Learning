@@ -54,7 +54,7 @@ as well as the best balance between the Sell-through rate and Service Level.
 
 ### Commands
 **_Train_** <br />
-python main.py --data_dir () --seq_len ()
+python main.py --method sac --main_dir ./Reinforcement-Learning --num_cpu 8 --run_num (# of run)
 
 **_Evaluation_** <br />
 python eval.py --data_dir () --one_step () --n_step () --n_step_size () --scale_data () --forecast_data () --loss_function () --tilt_loss_q () --custom_loss_prop () --model_name () --run_num ()
