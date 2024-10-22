@@ -15,6 +15,18 @@ The environment is a two-echelon Inventory Management system with 6 retail shops
 
 In Reinforcement Learning, reward function plays an essential role for the learning process and optimization
 of the policy. In this work, a novel reward function named Total Penalty (TP), was proposed and used. 
+
+Convergence of the original reward function (Total Cost) of Random Policy, A2C, TRPO, TD3, and SAC
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/8696d58b-72f4-4d56-bf89-4fd521c2b1ca" width=70% height=70%>
+</div><br />
+
 With the TP reward function, the agent conducted the inventory management with the lowest Total Cost 
 and inventory-to-sales ratio. Particularly, Soft Actor Critic (SAC) agent was able to achieve such feats 
-by leveraging on its entropy maximization technique and be robust to highly unstable demand. 
+by leveraging on its entropy maximization technique and be robust to highly unstable demand. This is further
+backed up by the eventual lowest convergence of its TP Reward function's plot. 
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/204b8b21-e7ef-4b5a-84ba-272714829398" width=70% height=70%>
+</div><br />
