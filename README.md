@@ -54,7 +54,11 @@ as well as the best balance between the Sell-through rate and Service Level.
 
 ### Commands
 **_Train_** <br />
+'''python
 python main.py --method sac --main_dir ./Reinforcement-Learning --num_cpu 8 --run_num (# of run)
+'''
 
 **_Evaluation_** <br />
+'''python
 python eval.py --method sac --main_dir ./Reinforcement-Learning --num_cpu 8 --run_num (# of run)
+'''
