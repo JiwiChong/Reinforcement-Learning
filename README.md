@@ -10,7 +10,7 @@ to establish the right balance between appropriate storage and demand fulfillmen
 The environment is a two-echelon Inventory Management system with 6 retail shops.
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/b9870498-fad2-491b-a769-05bf9a253574" width=80% height=80%>
+<img src="https://github.com/user-attachments/assets/b9870498-fad2-491b-a769-05bf9a253574" width=90% height=90%>
 </div><br />
 
 Soft Actor Critic (SAC) is the DRL algorithm that was best suited for this task thanks to its ability to 
@@ -19,7 +19,7 @@ learn to optimize the policy with extensive exploration via entropy maximization
 Overall Diagram of MTS Inventory Management with SAC:
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/d1c8ddad-ed2a-4365-ba4d-31a27c107a14" width=70% height=70%>
+<img src="https://github.com/user-attachments/assets/d1c8ddad-ed2a-4365-ba4d-31a27c107a14" width=80% height=80%>
 </div><br />
 
 In Reinforcement Learning, reward function plays an essential role for the learning process and optimization
@@ -49,7 +49,7 @@ When trained with TP reward function, SAC achieved the lowest Total Cost and inv
 as well as the best balance between the Sell-through rate and Service Level.
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/0a549807-dbd1-4fd5-a040-2cdd26074ec0" width=70% height=70%>
+<img src="https://github.com/user-attachments/assets/0a549807-dbd1-4fd5-a040-2cdd26074ec0" width=90% height=90%>
 </div><br />
 
 ### Commands
